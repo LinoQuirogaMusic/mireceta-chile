@@ -1,8 +1,8 @@
-// Import the functions you need from the SDKs you need
+// SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 
-// Your web app's Firebase configuration
+// Web app's Firebase configuration
 const firebaseConfig = {
 
   apiKey: "AIzaSyB8qpvAa9ynUeTPiNiu9uHYir7xJLCQM9M",
@@ -20,9 +20,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
 // Export auth and provider for use in other files
-export { auth, provider, signInWithPopup, signOut };
+export { auth, provider };
