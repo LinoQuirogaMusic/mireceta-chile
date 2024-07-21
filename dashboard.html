@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mi Receta</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <button onclick="signOutUser()">Cerrar sesión</button>
+    </header>
+    <main>
+        <h2>Bienvenido, <span id="user-name"></span></h2>
+        <div class="dashboard-content">
+            <button onclick="createPrescription()">Crear receta</button>
+            <button onclick="viewPrescriptions()">Ver recetas</button>
+            <button onclick="editPrescription()">Editar receta</button>
+            <button onclick="deletePrescription()">Eliminar receta</button>
+        </div>
+        <div id="prescription-details"></div>
+    </main>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
