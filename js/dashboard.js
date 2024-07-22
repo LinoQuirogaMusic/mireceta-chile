@@ -72,7 +72,7 @@ export async function loadPrescriptions() {
                 <p>Paciente: ${prescription.patientName}</p>
                 <p>Medicamento: ${prescription.medicationName}</p>
                 <p>Fecha: ${prescription.date}</p>
-                <button onclick="editPrescription('${doc.id}')">Editar receta</button>
+                <button onclick="showEditPrescriptionForm('${doc.id}')">Editar receta</button>
                 <button onclick="deletePrescription('${doc.id}')">Eliminar receta</button>
             `;
             prescriptionListDiv.appendChild(prescriptionElement);
