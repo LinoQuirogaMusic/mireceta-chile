@@ -1,5 +1,5 @@
 import { auth, firestore } from './firebase-config.js';
-import { collection, addDoc, query, where, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+import { collection, addDoc, query, where, getDocs, doc, updateDoc, deleteDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 import User from './user.js';
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid@8.3.2'; // Importando desde JSPM
 
@@ -85,7 +85,7 @@ export async function loadPrescriptions() {
 export async function showEditPrescriptionForm(prescriptionId) {
     // Obtener la receta de Firestore usando el ID
     const prescriptionRef = doc(firestore, 'prescriptions', prescriptionId);
-    const prescriptionDoc = await getDocs(prescriptionRef);
+    const prescriptionDoc = await getDoc(prescriptionRef);
 
     if (!prescriptionDoc.exists()) {
         console.error('Receta no encontrada');

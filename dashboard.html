@@ -34,9 +34,6 @@
                 <form onsubmit="event.preventDefault(); saveEditedPrescription();">
                     <input type="hidden" id="edit-prescription-id">
                     <label for="edit-patient-name">Nombre del Paciente:</label>
-                    <input type="text" id="edit-patient-name" oninput="searchPatients(this.value)" autocomplete="off">
-                    <ul id="suggestions-list" class="suggestions-list"></ul>
-
                     <input type="text" id="edit-patient-name" required>
                     <label for="edit-medication-name">Nombre del Medicamento:</label>
                     <input type="text" id="edit-medication-name" required>
@@ -61,10 +58,6 @@
         window.showCreatePrescriptionForm = showCreatePrescriptionForm;
         window.showEditPrescriptionForm =showEditPrescriptionForm;
         window.searchPatients = searchPatients;
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadPrescriptions();
-        });
     </script>
 </body>
 </html>
