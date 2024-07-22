@@ -82,8 +82,8 @@ export async function loadPrescriptions() {
     }
 }
 
-export async function showEditPrescriptionForm(prescriptionId, prescription) {
-
+export async function showEditPrescriptionForm(prescriptionId) {
+    // Obtener la receta de Firestore usando el ID
     const prescriptionRef = doc(firestore, 'prescriptions', prescriptionId);
     const prescriptionDoc = await getDoc(prescriptionRef);
 
@@ -102,6 +102,7 @@ export async function showEditPrescriptionForm(prescriptionId, prescription) {
     document.getElementById('edit-medication-name').value = prescription.medicationName;
     document.getElementById('edit-dosis').value = prescription.dosis;
 }
+
 
 export async function saveEditedPrescription() {
     const prescriptionId = document.getElementById('edit-prescription-id').value;
