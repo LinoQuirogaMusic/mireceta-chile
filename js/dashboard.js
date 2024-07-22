@@ -99,7 +99,7 @@ export async function showEditPrescriptionForm(prescriptionId) {
     document.getElementById('edit-patient-name').value = prescription.patientName;
     document.getElementById('edit-medication-name').value = prescription.medicationName;
     document.getElementById('edit-dosis').value = prescription.dosis;
-}
+    }
 
 export async function saveEditedPrescription() {
     const prescriptionId = document.getElementById('edit-prescription-id').value;
