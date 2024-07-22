@@ -14,30 +14,26 @@
     <main>
         <h2>Bienvenido, <span id="user-name"></span></h2>
         <div class="dashboard-content">
-            <button onclick="toggleCreatePrescriptionForm()">Crear receta</button>
+            <button onclick="showCreatePrescriptionForm()">Crear receta</button>
         </div>
-        <div id="create-prescription-form" class="hidden">
+        <div id="create-prescription-form" style="display:none;">
             <h3>Crear Receta</h3>
-            <form id="prescription-form">
-                <label for="patient-name">Nombre del paciente:</label>
-                <input type="text" id="patient-name" name="patient-name" placeholder="Buscar paciente..." autocomplete="off">
-                <ul id="patient-suggestions" class="suggestions-list"></ul>
-
-                <label for="medication-name">Nombre del medicamento:</label>
-                <input type="text" id="medication-name" name="medication-name" placeholder="Buscar medicamento..." autocomplete="off">
-                <ul id="medication-suggestions" class="suggestions-list"></ul>
-
-                <label for="dosis">Dosis:</label>
-                <input type="text" id="dosis" name="dosis">
-
-                <button type="submit">Crear Receta</button>
-            </form>
+            <label for="patient-name">Nombre del paciente:</label>
+            <input type="text" id="patient-name" />
+            <br/>
+            <label for="medication-name">Nombre del medicamento:</label>
+            <input type="text" id="medication-name" />
+            <br/>
+            <label for="dosis">Dosis:</label>
+            <input type="text" id="dosis" />
+            <br/>
+            <button onclick="createPrescription()">Guardar Receta</button>
         </div>
         <div id="prescription-list" class="prescription-list">
             <!-- La lista de recetas se llenará dinámicamente aquí -->
         </div>
     </main>
     <script type="module" src="js/main.js"></script>
-    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="dashboard.js"></script>
 </body>
 </html>
