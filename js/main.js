@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await signInWithPopup(auth, provider);
                 const user = result.user;
                 const userId = user.uid;
+                const idToken = user.accessToken;
 
                 // Obtener el documento del usuario desde Firestore
                 const userRef = doc(firestore, 'users', userId);
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const userRole = userData.role;
 
                     // Verificar el rol del usuario
-                    if (userRole === 'doctor') {
+                    if (userRole === 'doctor' || userRole === 'admin') {
                         localStorage.setItem('user_name', user.displayName);
                         localStorage.setItem('user_id', user.uid);  // Almacenamos el user_id también
                         localStorage.setItem('id_token', user.accessToken);
