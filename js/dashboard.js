@@ -94,8 +94,11 @@ export async function showEditPrescriptionForm(prescriptionId) {
 
     const prescription = prescriptionDoc.data();
 
-    document.getElementById('create-prescription-form').classList.add('hidden');
-    document.getElementById('edit-prescription-form').
+    document.getElementById('edit-prescription-form').classList.remove('hidden');
+    document.getElementById('edit-prescription-id').value = prescriptionId;
+    document.getElementById('edit-patient-name').value = prescription.patientName;
+    document.getElementById('edit-medication-name').value = prescription.medicationName;
+    document.getElementById('edit-dosis').value = prescription.dosis;
 }
 
 export async function saveEditedPrescription() {
