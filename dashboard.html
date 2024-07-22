@@ -15,7 +15,7 @@
         <h2>Bienvenido, <span id="user-name"></span></h2>
         <div class="dashboard-content">
             <button onclick="showCreatePrescriptionForm()">Crear receta</button>
-            <div id="create-prescription-form" style="display: none;">
+            <div id="create-prescription-form" class="form-container hidden">
                 <h3>Crear Nueva Receta</h3>
                 <form onsubmit="event.preventDefault(); createPrescription();">
                     <label for="patient-name">Nombre del paciente:</label>
@@ -34,7 +34,7 @@
                 <form onsubmit="event.preventDefault(); saveEditedPrescription();">
                     <input type="hidden" id="edit-prescription-id">
                     <label for="edit-patient-name">Nombre del Paciente:</label>
-                    <input type="text" id="edit-patient-name" placeholder="Nombre del paciente" required placeholder="Nombre del paciente" >
+                    <input type="text" id="edit-patient-name" placeholder="Nombre del paciente" required>
                     <label for="edit-medication-name">Nombre del Medicamento:</label>
                     <input type="text" id="edit-medication-name" placeholder="Nombre del medicamento" required>
                     <label for="edit-dosis">Dosis:</label>
@@ -56,7 +56,7 @@
         window.saveEditedPrescription = saveEditedPrescription;
         window.deletePrescription = deletePrescription;
         window.showCreatePrescriptionForm = showCreatePrescriptionForm;
-        window.showEditPrescriptionForm =showEditPrescriptionForm;
+        window.showEditPrescriptionForm = showEditPrescriptionForm;
         window.searchPatients = searchPatients;
     </script>
 </body>
