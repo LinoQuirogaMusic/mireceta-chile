@@ -24,7 +24,7 @@ export async function createPrescription() {
     const date = new Date().toISOString();
 
     // Buscar el ID del paciente en Firestore
-    const patientsCollection = collection(firestore, 'patients');
+    const patientsCollection = collection(firestore, 'users');
     const q = query(patientsCollection, where('name', '==', patientName));
     const patientSnapshot = await getDocs(q);
 
@@ -83,6 +83,17 @@ export async function loadPrescriptions() {
 }
 
 export function showEditPrescriptionForm(prescriptionId, prescription) {
+
+    const prescriptionRef = doc(firestore, 'prescriptions', prescriptionId);
+    const prescriptionDoc = await getDoc(prescriptionRef);
+
+    if (!prescriptionDoc.exists()) {
+        console.error('Receta no encontrada');
+        return;
+    }
+
+    const prescription = prescriptionDoc.data();
+
     document.getElementById('create-prescription-form').style.display = 'none';
     document.getElementById('edit-prescription-form').style.display = 'block';
 
