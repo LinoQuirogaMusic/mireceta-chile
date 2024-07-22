@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPrescriptions();
 });
 
-function showCreatePrescriptionForm() {
+export function showCreatePrescriptionForm() {
     document.getElementById('create-prescription-form').style.display = 'block';
     document.getElementById('edit-prescription-form').style.display = 'none';
 }
 
-async function createPrescription() {
+export async function createPrescription() {
     const patientName = document.getElementById('patient-name').value;
     const medicationName = document.getElementById('medication-name').value;
     const dosis = document.getElementById('dosis').value;
@@ -58,7 +58,7 @@ async function createPrescription() {
     }
 }
 
-async function loadPrescriptions() {
+export async function loadPrescriptions() {
     try {
         const querySnapshot = await getDocs(collection(firestore, 'prescriptions'));
         const prescriptionListDiv = document.getElementById('prescription-list');
@@ -82,7 +82,7 @@ async function loadPrescriptions() {
     }
 }
 
-function showEditPrescriptionForm(prescriptionId, prescription) {
+export function showEditPrescriptionForm(prescriptionId, prescription) {
     document.getElementById('create-prescription-form').style.display = 'none';
     document.getElementById('edit-prescription-form').style.display = 'block';
 
@@ -92,7 +92,7 @@ function showEditPrescriptionForm(prescriptionId, prescription) {
     document.getElementById('edit-dosis').value = prescription.dosis;
 }
 
-async function saveEditedPrescription() {
+export async function saveEditedPrescription() {
     const prescriptionId = document.getElementById('edit-prescription-id').value;
     const patientName = document.getElementById('edit-patient-name').value;
     const medicationName = document.getElementById('edit-medication-name').value;
@@ -114,8 +114,7 @@ async function saveEditedPrescription() {
     }
 }
 
-
-async function deletePrescription(prescriptionId) {
+export async function deletePrescription(prescriptionId) {
     const prescriptionRef = doc(firestore, 'prescriptions', prescriptionId);
 
     try {
@@ -127,7 +126,7 @@ async function deletePrescription(prescriptionId) {
     }
 }
 
-function signOutUser() {
+export function signOutUser() {
     auth.signOut().then(() => {
         localStorage.removeItem('user_name');
         localStorage.removeItem('id_token');
