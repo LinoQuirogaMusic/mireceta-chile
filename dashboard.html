@@ -18,8 +18,10 @@
             <div id="create-prescription-form" style="display: none;">
                 <h3>Crear Nueva Receta</h3>
                 <form onsubmit="event.preventDefault(); createPrescription();">
-                    <label for="patient-name">Nombre del Paciente:</label>
-                    <input type="text" id="patient-name" required>
+                    <label for="patient-name">Nombre del paciente:</label>
+                    <input type="text" id="patient-name" oninput="searchPatients(this.value)" autocomplete="off">
+                    <ul id="suggestions-list" class="suggestions-list"></ul>
+
                     <label for="medication-name">Nombre del Medicamento:</label>
                     <input type="text" id="medication-name" required>
                     <label for="dosis">Dosis:</label>
@@ -32,6 +34,9 @@
                 <form onsubmit="event.preventDefault(); saveEditedPrescription();">
                     <input type="hidden" id="edit-prescription-id">
                     <label for="edit-patient-name">Nombre del Paciente:</label>
+                    <input type="text" id="edit-patient-name" oninput="searchPatients(this.value)" autocomplete="off">
+                    <ul id="suggestions-list" class="suggestions-list"></ul>
+
                     <input type="text" id="edit-patient-name" required>
                     <label for="edit-medication-name">Nombre del Medicamento:</label>
                     <input type="text" id="edit-medication-name" required>
@@ -47,13 +52,13 @@
     </main>
     <script type="module" src="js/main.js"></script>
     <script type="module">
-        import { signOutUser, showCreatePrescriptionForm, createPrescription, saveEditedPrescription, deletePrescription, showEditPrescriptionForm  } from './js/dashboard.js';
+        import { signOutUser, showCreatePrescriptionForm, createPrescription, saveEditedPrescription, deletePrescription, showEditPrescriptionForm, searchPatients } from './js/dashboard.js';
 
         window.signOutUser = signOutUser;
-        window.showCreatePrescriptionForm = showCreatePrescriptionForm;
         window.createPrescription = createPrescription;
         window.saveEditedPrescription = saveEditedPrescription;
         window.deletePrescription = deletePrescription;
+        window.showCreatePrescriptionForm = showCreatePrescriptionForm;
         window.showEditPrescriptionForm =showEditPrescriptionForm;
 
         document.addEventListener('DOMContentLoaded', () => {

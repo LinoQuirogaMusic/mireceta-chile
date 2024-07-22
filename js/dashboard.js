@@ -137,6 +137,38 @@ export async function deletePrescription(prescriptionId) {
     }
 }
 
+export async function searchPatients(queryText) {
+    const suggestionsList = document.getElementById('suggestions-list');
+    suggestionsList.innerHTML = ''; // Limpiar la lista de sugerencias
+
+    if (queryText.length < 3) { // No buscar hasta que el texto tenga al menos 3 caracteres
+        return;
+    }
+
+    try {
+        const patientsCollection = collection(firestore, 'prescriptions');
+        const q = query(patientsCollection, where('patientName', '>=', queryText), where('patientName', '<=', queryText + '\uf8ff'));
+        const querySnapshot = await getDocs(q);
+
+        if (querySnapshot.empty) {
+            return;
+        }
+
+        querySnapshot.forEach((doc) => {
+            const patientName = doc.data().patientName;
+            const li = document.createElement('li');
+            li.textContent = patientName;
+            li.addEventListener('click', () => {
+                document.getElementById('patient-name').value = patientName;
+                suggestionsList.innerHTML = ''; // Limpiar sugerencias después de seleccionar
+            });
+            suggestionsList.appendChild(li);
+        });
+    } catch (error) {
+        console.error('Error searching for patients:', error);
+    }
+}
+
 export function signOutUser() {
     auth.signOut().then(() => {
         localStorage.removeItem('user_name');
