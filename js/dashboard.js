@@ -1,5 +1,6 @@
 import { firestore } from './firebase-config.js';
 import { collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+import { v4 as uuidv4 } from 'https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js'; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const userNameSpan = document.getElementById('user-name');
