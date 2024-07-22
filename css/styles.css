@@ -36,10 +36,6 @@ header button:hover {
     background-color: #003d33; /* Even darker teal */
 }
 
-/* Main Content Styles */
-main {
-    padding: 20px;
-}
 
 h2 {
     font-size: 24px;
@@ -131,4 +127,46 @@ h2 {
 /* Hidden Elements */
 .hidden {
     display: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Restar altura del encabezado */
+    padding: 20px;
+}
+
+.login-container {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #00796b; /* Color teal */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #004d40; /* Teal más oscuro */
+}
+
+#error-message {
+    margin-top: 10px;
 }

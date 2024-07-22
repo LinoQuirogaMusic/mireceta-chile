@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Mi Receta</title>
+    <title>Inicio de Sesión - Mi Receta</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
 
 </head>
 <body>
-    <div class="login-container">
-        <h1>Mi Receta - Login</h1>
-        <button id="google-login">Login con Google</button>
-    </div>
+    <header>
+        <h1>Mi Receta</h1>
+    </header>
+    <main>
+        <div class="login-container">
+            <h2>Iniciar sesión</h2>
+            <button id="google-login">Iniciar sesión con Google</button>
+            <div id="error-message" style="color: red; margin-top: 10px;"></div>
+        </div>
+    </main>
     <script type="module" src="js/firebase-config.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
