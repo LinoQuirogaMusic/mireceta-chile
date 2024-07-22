@@ -1,6 +1,6 @@
 import { firestore } from './firebase-config.js';
 import { collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
-import { uuidv4 } from 'https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js'; 
+import { uuidv4 } from 'https://unpkg.com/uuid@8.3.2/dist/umd/uuidv4.min.js'; 
 import User from './user.js';
 
 window.addEventListener('load', async () => {
