@@ -36,15 +36,21 @@ header button:hover {
     background-color: #003d33; /* Even darker teal */
 }
 
-
 h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.dashboard-content {
+/* Main Container */
+main {
+    padding: 20px;
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Dashboard Content */
+.dashboard-content {
     margin-bottom: 20px;
 }
 
@@ -66,6 +72,9 @@ h2 {
 /* Prescription List Styles */
 .prescription-list {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .prescription-item {
@@ -73,7 +82,9 @@ h2 {
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     padding: 15px;
-    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 .prescription-item p {
@@ -88,7 +99,7 @@ h2 {
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
-    margin-right: 5px;
+    margin-top: 10px;
 }
 
 .prescription-item button:hover {
@@ -129,14 +140,7 @@ h2 {
     display: none;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 60px); /* Restar altura del encabezado */
-    padding: 20px;
-}
-
+/* Login Container */
 .login-container {
     background-color: white;
     border: 1px solid #e0e0e0;
@@ -152,7 +156,7 @@ main {
 }
 
 button {
-    background-color: #00796b; /* Color teal */
+    background-color: #00796b; /* Teal color */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -164,7 +168,7 @@ button {
 }
 
 button:hover {
-    background-color: #004d40; /* Teal más oscuro */
+    background-color: #004d40; /* Darker teal */
 }
 
 #error-message {
