@@ -1,5 +1,5 @@
 import { auth, firestore } from './firebase-config.js';
-import { collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+import { collection, addDoc, query, where, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 import User from './user.js';
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid@8.3.2'; // Importando desde JSPM
 
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function showCreatePrescriptionForm() {
     document.getElementById('create-prescription-form').style.display = 'block';
+    document.getElementById('edit-prescription-form').style.display = 'none';
 }
 
 async function createPrescription() {
@@ -81,12 +82,49 @@ async function loadPrescriptions() {
     }
 }
 
-async function editPrescription(prescriptionId) {
-    // Implementar lógica para editar la receta
+function showEditPrescriptionForm(prescriptionId, prescription) {
+    document.getElementById('create-prescription-form').style.display = 'none';
+    document.getElementById('edit-prescription-form').style.display = 'block';
+
+    document.getElementById('edit-prescription-id').value = prescriptionId;
+    document.getElementById('edit-patient-name').value = prescription.patientName;
+    document.getElementById('edit-medication-name').value = prescription.medicationName;
+    document.getElementById('edit-dosis').value = prescription.dosis;
 }
 
+async function saveEditedPrescription() {
+    const prescriptionId = document.getElementById('edit-prescription-id').value;
+    const patientName = document.getElementById('edit-patient-name').value;
+    const medicationName = document.getElementById('edit-medication-name').value;
+    const dosis = document.getElementById('edit-dosis').value;
+
+    const prescriptionRef = doc(firestore, 'prescriptions', prescriptionId);
+
+    try {
+        await updateDoc(prescriptionRef, {
+            patientName,
+            medicationName,
+            dosis
+        });
+        alert('Receta actualizada exitosamente');
+        loadPrescriptions();
+        document.getElementById('edit-prescription-form').style.display = 'none';
+    } catch (e) {
+        console.error('Error al actualizar la receta:', e);
+    }
+}
+
+
 async function deletePrescription(prescriptionId) {
-    // Implementar lógica para eliminar la receta
+    const prescriptionRef = doc(firestore, 'prescriptions', prescriptionId);
+
+    try {
+        await deleteDoc(prescriptionRef);
+        alert('Receta eliminada exitosamente');
+        loadPrescriptions();
+    } catch (e) {
+        console.error('Error al eliminar la receta:', e);
+    }
 }
 
 function signOutUser() {
