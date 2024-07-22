@@ -1,7 +1,6 @@
 import { auth, provider, firestore } from './firebase-config.js';
 import { signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
 import { getDocs, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
-import { v4 as uuidv4 } from 'https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js';
 
 document.getElementById('google-login').addEventListener('click', () => {
     signInWithPopup(auth, provider)
