@@ -1,58 +1,134 @@
-/* styles.css */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f7f9;
     margin: 0;
     padding: 0;
 }
 
+/* Header Styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+    background-color: #00796b; /* Teal color for health sector */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #004d40; /* Darker teal for accent */
+}
+
+header h1 {
+    margin: 0;
+}
+
+header button {
+    background-color: #004d40; /* Darker teal */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+header button:hover {
+    background-color: #003d33; /* Even darker teal */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 .dashboard-content {
-    margin: 20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-#prescription-list {
+.dashboard-content button {
+    background-color: #00796b; /* Teal color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.dashboard-content button:hover {
+    background-color: #004d40; /* Darker teal */
+}
+
+/* Prescription List Styles */
+.prescription-list {
     margin-top: 20px;
 }
 
-#prescription-list div {
-    border: 1px solid #ddd;
-    padding: 10px;
+.prescription-item {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
 }
 
-button {
-    margin-left: 10px;
+.prescription-item p {
+    margin: 0 0 10px;
 }
 
-#created-prescription-form {
-    margin: 20px;
-}
-
-.suggestions-list {
-    border: 1px solid #ccc;
-    max-height: 150px;
-    overflow-y: auto;
-    position: absolute;
-    background-color: #fff;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-.suggestions-list li {
-    padding: 8px;
+.prescription-item button {
+    background-color: #00796b; /* Teal color */
+    color: white;
+    border: none;
+    padding: 8px 12px;
     cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-right: 5px;
 }
 
-.suggestions-list li:hover {
-    background-color: #f0f0f0;
+.prescription-item button:hover {
+    background-color: #004d40; /* Darker teal */
+}
+
+/* Forms Styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container button {
+    background-color: #00796b; /* Teal color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #004d40; /* Darker teal */
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
 }

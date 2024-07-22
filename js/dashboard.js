@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 export function showCreatePrescriptionForm() {
-    document.getElementById('create-prescription-form').style.display = 'block';
-    document.getElementById('edit-prescription-form').style.display = 'none';
+    document.getElementById('create-prescription-form').classList.remove('hidden');
+    document.getElementById('edit-prescription-form').classList.add('hidden');
 }
 
 export async function createPrescription() {
@@ -94,13 +94,8 @@ export async function showEditPrescriptionForm(prescriptionId) {
 
     const prescription = prescriptionDoc.data();
 
-    document.getElementById('create-prescription-form').style.display = 'none';
-    document.getElementById('edit-prescription-form').style.display = 'block';
-
-    document.getElementById('edit-prescription-id').value = prescriptionId;
-    document.getElementById('edit-patient-name').value = prescription.patientName;
-    document.getElementById('edit-medication-name').value = prescription.medicationName;
-    document.getElementById('edit-dosis').value = prescription.dosis;
+    document.getElementById('create-prescription-form').classList.add('hidden');
+    document.getElementById('edit-prescription-form').
 }
 
 export async function saveEditedPrescription() {
