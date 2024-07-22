@@ -15,12 +15,12 @@
         <h2>Bienvenido, <span id="user-name"></span></h2>
         <div class="dashboard-content">
             <button onclick="createPrescription()">Crear receta</button>
-            <button onclick="viewPrescriptions()">Ver recetas</button>
-            <button onclick="editPrescription()">Editar receta</button>
-            <button onclick="deletePrescription()">Eliminar receta</button>
         </div>
-        <div id="prescription-details"></div>
+        <div id="prescription-list" class="prescription-list">
+            <!-- La lista de recetas se llenará dinámicamente aquí -->
+        </div>
     </main>
+    <script type="module" src="js/dashboard.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

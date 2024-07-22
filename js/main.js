@@ -1,5 +1,5 @@
 import { auth, provider } from './firebase-config.js';
-import { signInWithPopup } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import { signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
 
 document.getElementById('google-login').addEventListener('click', () => {
     signInWithPopup(auth, provider)

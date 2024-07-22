@@ -2,36 +2,60 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-}
-
-.login-container {
-    text-align: center;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #4CAF50;
+    color: white;
     padding: 10px;
     text-align: center;
 }
 
-main {
-    padding: 20px;
-}
-
-.dashboard-content {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+h1 {
+    margin: 0;
 }
 
 button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
     padding: 10px 20px;
-    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
+    border-radius: 4px;
+}
+
+.dashboard-content {
+    margin: 20px;
+}
+
+.prescription-list {
+    margin: 20px;
+}
+
+.prescription-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.options-menu {
+    display: none;
+    margin-top: 10px;
+}
+
+.options-menu button {
+    background-color: #ff5722;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.options-menu button:hover {
+    background-color: #e64a19;
 }
