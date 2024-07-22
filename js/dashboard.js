@@ -85,7 +85,7 @@ export async function loadPrescriptions() {
 export async function showEditPrescriptionForm(prescriptionId) {
     // Obtener la receta de Firestore usando el ID
     const prescriptionRef = doc(firestore, 'prescriptions', prescriptionId);
-    const prescriptionDoc = await getDoc(prescriptionRef);
+    const prescriptionDoc = await getDocs(prescriptionRef);
 
     if (!prescriptionDoc.exists()) {
         console.error('Receta no encontrada');
