@@ -82,7 +82,7 @@ export async function loadPrescriptions() {
     }
 }
 
-export function showEditPrescriptionForm(prescriptionId, prescription) {
+export async function showEditPrescriptionForm(prescriptionId, prescription) {
 
     const prescriptionRef = doc(firestore, 'prescriptions', prescriptionId);
     const prescriptionDoc = await getDoc(prescriptionRef);
