@@ -46,6 +46,18 @@
         </div>
     </main>
     <script type="module" src="js/main.js"></script>
-    <script type="module" src="js/dashboard.js"></script>
+    <script type="module">
+        import { signOutUser, showCreatePrescriptionForm, createPrescription, loadPrescriptions, saveEditedPrescription, deletePrescription } from './js/dashboard.js';
+
+        window.signOutUser = signOutUser;
+        window.showCreatePrescriptionForm = showCreatePrescriptionForm;
+        window.createPrescription = createPrescription;
+        window.saveEditedPrescription = saveEditedPrescription;
+        window.deletePrescription = deletePrescription;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPrescriptions();
+        });
+    </script>
 </body>
 </html>
