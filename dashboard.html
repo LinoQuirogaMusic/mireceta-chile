@@ -12,36 +12,36 @@
         <button onclick="signOutUser()">Cerrar sesión</button>
     </header>
     <main>
-        <h2>Bienvenido, <span id="user-name"></span></h2>
         <div class="dashboard-content">
+            <h2>Bienvenido, <span id="user-name"></span></h2>
             <button onclick="showCreatePrescriptionForm()">Crear receta</button>
-            <div id="create-prescription-form" class="form-container hidden">
-                <h3>Crear Nueva Receta</h3>
-                <form onsubmit="event.preventDefault(); createPrescription();">
-                    <label for="patient-name">Nombre del paciente:</label>
-                    <input type="text" id="patient-name" oninput="searchPatients(this.value)" autocomplete="off" placeholder="Nombre del paciente">
-                    <ul id="suggestions-list" class="suggestions-list"></ul>
+        </div>
+        <div id="create-prescription-form" class="form-container hidden">
+            <h3>Crear Nueva Receta</h3>
+            <form onsubmit="event.preventDefault(); createPrescription();">
+                <label for="patient-name">Nombre del paciente:</label>
+                <input type="text" id="patient-name" oninput="searchPatients(this.value)" autocomplete="off" placeholder="Nombre del paciente">
+                <ul id="suggestions-list" class="suggestions-list"></ul>
 
-                    <label for="medication-name">Nombre del Medicamento:</label>
-                    <input type="text" id="medication-name" placeholder="Nombre del medicamento" />
-                    <label for="dosis">Dosis:</label>
-                    <input type="text" id="dosis" placeholder="Dosis" />
-                    <button type="submit">Guardar receta</button>
-                </form>
-            </div>
-            <div id="edit-prescription-form" class="form-container hidden">
-                <h3>Editar Receta</h3>
-                <form onsubmit="event.preventDefault(); saveEditedPrescription();">
-                    <input type="hidden" id="edit-prescription-id">
-                    <label for="edit-patient-name">Nombre del Paciente:</label>
-                    <input type="text" id="edit-patient-name" placeholder="Nombre del paciente" required>
-                    <label for="edit-medication-name">Nombre del Medicamento:</label>
-                    <input type="text" id="edit-medication-name" placeholder="Nombre del medicamento" required>
-                    <label for="edit-dosis">Dosis:</label>
-                    <input type="text" id="edit-dosis" placeholder="Dosis" required>
-                    <button type="submit">Guardar Cambios</button>
-                </form>
-            </div>
+                <label for="medication-name">Nombre del Medicamento:</label>
+                <input type="text" id="medication-name" placeholder="Nombre del medicamento" />
+                <label for="dosis">Dosis:</label>
+                <input type="text" id="dosis" placeholder="Dosis" />
+                <button type="submit">Guardar receta</button>
+            </form>
+        </div>
+        <div id="edit-prescription-form" class="form-container hidden">
+            <h3>Editar Receta</h3>
+            <form onsubmit="event.preventDefault(); saveEditedPrescription();">
+                <input type="hidden" id="edit-prescription-id">
+                <label for="edit-patient-name">Nombre del Paciente:</label>
+                <input type="text" id="edit-patient-name" placeholder="Nombre del paciente" required>
+                <label for="edit-medication-name">Nombre del Medicamento:</label>
+                <input type="text" id="edit-medication-name" placeholder="Nombre del medicamento" required>
+                <label for="edit-dosis">Dosis:</label>
+                <input type="text" id="edit-dosis" placeholder="Dosis" required>
+                <button type="submit">Guardar Cambios</button>
+            </form>
         </div>
         <div id="prescription-list" class="prescription-list">
             <!-- La lista de recetas se llenará dinámicamente aquí -->
