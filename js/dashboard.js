@@ -1,21 +1,13 @@
-import { firestore } from './firebase-config.js';
+import { auth, firestore } from './firebase-config.js';
 import { collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
-import { uuidv4 } from 'https://unpkg.com/uuid@8.3.2/dist/umd/uuidv4.min.js'; 
 import User from './user.js';
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid@8.3.2'; // Importando desde JSPM
 
-window.addEventListener('load', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     const userNameSpan = document.getElementById('user-name');
-    const userName = localStorage.getItem('user_name');
-    
-    if (userName) {
-        userNameSpan.textContent = userName;
+    userNameSpan.textContent = localStorage.getItem('user_name');
 
-        // Cargar recetas
-        await loadPrescriptions();
-    } else {
-        // Redirigir a la página de login si no hay usuario
-        window.location.href = 'index.html';
-    }
+    loadPrescriptions();
 });
 
 function showCreatePrescriptionForm() {

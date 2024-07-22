@@ -7,6 +7,7 @@ document.getElementById('google-login').addEventListener('click', () => {
         .then((result) => {
             const user = result.user;
             localStorage.setItem('user_name', user.displayName);
+            localStorage.setItem('user_id', user.uid); // Guarda el UID del usuario
             localStorage.setItem('id_token', user.accessToken);
             window.location.href = 'dashboard.html';
         })
@@ -14,3 +15,14 @@ document.getElementById('google-login').addEventListener('click', () => {
             console.error('Error during sign-in:', error);
         });
 });
+
+export function signOutUser() {
+    auth.signOut()
+        .then(() => {
+            localStorage.clear();
+            window.location.href = 'index.html';
+        })
+        .catch((error) => {
+            console.error('Error signing out:', error);
+        });
+}
