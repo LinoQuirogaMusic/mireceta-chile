@@ -1,12 +1,21 @@
 import { firestore } from './firebase-config.js';
 import { collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 import { v4 as uuidv4 } from 'https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js'; 
+import User from './user.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', async () => {
     const userNameSpan = document.getElementById('user-name');
-    userNameSpan.textContent = localStorage.getItem('user_name');
+    const userName = localStorage.getItem('user_name');
+    
+    if (userName) {
+        userNameSpan.textContent = userName;
 
-    loadPrescriptions();
+        // Cargar recetas
+        await loadPrescriptions();
+    } else {
+        // Redirigir a la página de login si no hay usuario
+        window.location.href = 'index.html';
+    }
 });
 
 function showCreatePrescriptionForm() {
@@ -57,27 +66,27 @@ async function createPrescription() {
 }
 
 async function loadPrescriptions() {
-    const prescriptionList = document.getElementById('prescription-list');
-    prescriptionList.innerHTML = '';
-
-    const prescriptionsCollection = collection(firestore, 'prescriptions');
-    const q = query(prescriptionsCollection);
-    const prescriptionSnapshot = await getDocs(q);
-
-    prescriptionSnapshot.forEach(doc => {
-        const prescription = doc.data();
-        const div = document.createElement('div');
-        div.textContent = `${prescription.medicationName} - ${prescription.dosis}`;
-        const editButton = document.createElement('button');
-        editButton.textContent = 'Editar';
-        editButton.onclick = () => editPrescription(doc.id);
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Eliminar';
-        deleteButton.onclick = () => deletePrescription(doc.id);
-        div.appendChild(editButton);
-        div.appendChild(deleteButton);
-        prescriptionList.appendChild(div);
-    });
+    try {
+        const querySnapshot = await getDocs(collection(firestore, 'prescriptions'));
+        const prescriptionListDiv = document.getElementById('prescription-list');
+        prescriptionListDiv.innerHTML = '';
+        
+        querySnapshot.forEach((doc) => {
+            const prescription = doc.data();
+            const prescriptionElement = document.createElement('div');
+            prescriptionElement.className = 'prescription-item';
+            prescriptionElement.innerHTML = `
+                <p>Paciente: ${prescription.patientName}</p>
+                <p>Medicamento: ${prescription.medicationName}</p>
+                <p>Fecha: ${prescription.date}</p>
+                <button onclick="editPrescription('${doc.id}')">Editar receta</button>
+                <button onclick="deletePrescription('${doc.id}')">Eliminar receta</button>
+            `;
+            prescriptionListDiv.appendChild(prescriptionElement);
+        });
+    } catch (error) {
+        console.error('Error loading prescriptions:', error);
+    }
 }
 
 async function editPrescription(prescriptionId) {
@@ -86,4 +95,14 @@ async function editPrescription(prescriptionId) {
 
 async function deletePrescription(prescriptionId) {
     // Implementar lógica para eliminar la receta
+}
+
+function signOutUser() {
+    auth.signOut().then(() => {
+        localStorage.removeItem('user_name');
+        localStorage.removeItem('id_token');
+        window.location.href = 'index.html';
+    }).catch((error) => {
+        console.error('Error during sign-out:', error);
+    });
 }
