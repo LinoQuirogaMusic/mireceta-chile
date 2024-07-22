@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (googleLoginButton) {
         googleLoginButton.addEventListener('click', async () => {
             try {
+                // Autenticación con Google
                 const result = await signInWithPopup(auth, provider);
                 const user = result.user;
                 const userId = user.uid;
-                const idToken = user.accessToken;
 
                 // Obtener el documento del usuario desde Firestore
                 const userRef = doc(firestore, 'users', userId);
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const userRole = userData.role;
 
                     // Verificar el rol del usuario
-                    if (userRole === 'doctor' || userRole === 'admin') {
+                    if (userRole === 'doctor') {
                         localStorage.setItem('user_name', user.displayName);
-                        localStorage.setItem('user_id', user.uid);  // Almacenamos el user_id también
+                        localStorage.setItem('user_id', user.uid);  // Almacena el user_id también
                         localStorage.setItem('id_token', user.accessToken);
                         window.location.href = 'dashboard.html';
                     } else {
