@@ -38,12 +38,16 @@ header button:hover {
 
 /* Main Container */
 main {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: flex-start; /* Align items to the start */
+    align-items: center; /* Align items to the start */
+    height: calc(100vh - 60px); /
+    padding: 20px;
 }
+
+
+
 
 /* Dashboard Content */
 .dashboard-content {
