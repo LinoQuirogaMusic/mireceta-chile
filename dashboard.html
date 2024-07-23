@@ -14,11 +14,13 @@
             <span id="user-name"></span>
         </div>
         <h1>Dashboard</h1>
-        <button onclick="signOutUser()">Cerrar sesión</button>
+        <div class="button-container">
+            <button onclick="showCreatePrescriptionForm()">Crear receta</button>
+            <button onclick="signOutUser()">Cerrar sesión</button>
+        </div>
     </header>
     <main>
         <div class="dashboard-content">
-            <button onclick="showCreatePrescriptionForm()">Crear receta</button>
             <div id="create-prescription-form" class="modal hidden">
                 <div class="modal-content">
                     <h3>Crear Nueva Receta</h3>
@@ -76,3 +78,4 @@
     </script>
 </body>
 </html>
+

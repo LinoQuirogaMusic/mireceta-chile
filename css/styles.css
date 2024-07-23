@@ -9,13 +9,11 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #00796b; /* Teal color for health sector */
-    color: white;
-    padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 4px solid #004d40; /* Darker teal for accent */
+    justify-content: space-between; /* Distribuye los elementos a lo largo del header */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    padding: 10px;
+    background-color: #f8f9fa;
 }
 
 header h1 {
@@ -80,11 +78,11 @@ main {
 
 #user-info {
     display: flex;
-    align-items: center; /* Centra verticalmente el texto y la imagen */
+    align-items: center;
 }
 
 .user-photo {
-    width: 50px; /* Ajusta el ancho según sea necesario */
+    width: 50px; /* Ajusta el tamaño según sea necesario */
     height: 50px; /* Ajusta la altura para que sea igual a la altura del texto */
     border-radius: 50%; /* Hace la imagen redonda */
     object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
@@ -97,6 +95,7 @@ main {
 
 /* Prescription List Styles */
 .prescription-list {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -129,6 +128,13 @@ main {
     border-radius: 5px;
     margin-top: 10px;
 }
+
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+
 
 .prescription-item button:hover {
     background-color: #004d40; /* Darker teal */
