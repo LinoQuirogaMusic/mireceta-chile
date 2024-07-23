@@ -78,12 +78,21 @@ main {
     background-color: #004d40; /* Darker teal */
 }
 
+#user-info {
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto y la imagen */
+}
+
 .user-photo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
+    width: 50px; /* Ajusta el ancho según sea necesario */
+    height: 50px; /* Ajusta la altura para que sea igual a la altura del texto */
+    border-radius: 50%; /* Hace la imagen redonda */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
+    margin-right: 10px; /* Espacio entre la foto y el nombre del usuario */
+}
+
+#user-name {
+    font-size: 18px; /* Ajusta el tamaño del texto si es necesario */
 }
 
 /* Prescription List Styles */
