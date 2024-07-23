@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPrescriptions();
 });
 
+// Función para cerrar un modal
+export function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add('hidden');
+    }
+}
+
 export function showCreatePrescriptionForm() {
     document.getElementById('create-prescription-form').classList.remove('hidden');
     document.getElementById('edit-prescription-form').classList.add('hidden');
@@ -53,6 +61,7 @@ export async function createPrescription() {
         await addDoc(prescriptionRef, newPrescription);
         alert('Receta creada exitosamente');
         loadPrescriptions();
+        closeModal('create-prescription-form'); // Cerrar el modal de creación
     } catch (e) {
         console.error('Error al crear la receta:', e);
     }
@@ -99,7 +108,7 @@ export async function showEditPrescriptionForm(prescriptionId) {
     document.getElementById('edit-patient-name').value = prescription.patientName;
     document.getElementById('edit-medication-name').value = prescription.medicationName;
     document.getElementById('edit-dosis').value = prescription.dosis;
-    }
+}
 
 export async function saveEditedPrescription() {
     const prescriptionId = document.getElementById('edit-prescription-id').value;
@@ -117,7 +126,7 @@ export async function saveEditedPrescription() {
         });
         alert('Receta actualizada exitosamente');
         loadPrescriptions();
-        document.getElementById('edit-prescription-form').style.display = 'none';
+        closeModal('edit-prescription-form'); // Cerrar el modal de edición
     } catch (e) {
         console.error('Error al actualizar la receta:', e);
     }
