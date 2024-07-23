@@ -13,7 +13,9 @@
     </header>
     <main>
         <div class="dashboard-content">
-            <h2>Bienvenido, <span id="user-name"></span></h2>
+            <div id="user-info">
+        <img id="user-photo" src="" alt="Foto de perfil" class="user-photo">
+        <span id="user-name"></span>
             <button onclick="showCreatePrescriptionForm()">Crear receta</button>
         </div>
         <div id="create-prescription-form" class="modal hidden">
@@ -49,13 +51,16 @@
                 </form>
             </div>
         </div>
+
         <div id="prescription-list" class="prescription-list">
             <!-- La lista de recetas se llenará dinámicamente aquí -->
         </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module">
-        import { signOutUser, showCreatePrescriptionForm, createPrescription, saveEditedPrescription, deletePrescription, showEditPrescriptionForm, searchPatients, closeModal } from './js/dashboard.js';
+        import { signOutUser, showCreatePrescriptionForm, createPrescription, saveEditedPrescription, deletePrescription, showEditPrescriptionForm, searchPatients, closeModal, downloadPrescriptionQRCode } from './js/dashboard.js';
 
         window.signOutUser = signOutUser;
         window.createPrescription = createPrescription;
@@ -65,6 +70,7 @@
         window.showEditPrescriptionForm = showEditPrescriptionForm;
         window.searchPatients = searchPatients;
         window.closeModal = closeModal;
+        window.downloadPrescriptionQRCode = downloadPrescriptionQRCode;
     </script>
 </body>
 </html>

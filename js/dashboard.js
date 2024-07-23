@@ -5,7 +5,10 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid@8.3.2'; // Importando desde 
 
 document.addEventListener('DOMContentLoaded', () => {
     const userNameSpan = document.getElementById('user-name');
+    const userPhotoImg = document.getElementById('user-photo');
+
     userNameSpan.textContent = localStorage.getItem('user_name');
+    userPhotoImg.src = localStorage.getItem('user_photo_url') || 'default-profile.png';
 
     loadPrescriptions();
 });
@@ -83,6 +86,7 @@ export async function loadPrescriptions() {
                 <p>Fecha: ${prescription.date}</p>
                 <button onclick="showEditPrescriptionForm('${doc.id}')">Editar receta</button>
                 <button onclick="deletePrescription('${doc.id}')">Eliminar receta</button>
+                <button onclick="downloadPrescriptionQRCode('${doc.id}')">Descargar receta</button>
             `;
             prescriptionListDiv.appendChild(prescriptionElement);
         });
@@ -90,6 +94,26 @@ export async function loadPrescriptions() {
         console.error('Error loading prescriptions:', error);
     }
 }
+
+export async function downloadPrescriptionQRCode(prescriptionId) {
+    try {
+        const qrCodeCanvas = document.createElement('canvas');
+        QRCode.toCanvas(qrCodeCanvas, prescriptionId, { width: 300 }, (error) => {
+            if (error) {
+                console.error('Error generating QR code:', error);
+                return;
+            }
+            
+            const link = document.createElement('a');
+            link.href = qrCodeCanvas.toDataURL('image/jpeg');
+            link.download = `receta_${prescriptionId}.jpg`;
+            link.click();
+        });
+    } catch (error) {
+        console.error('Error downloading prescription QR code:', error);
+    }
+}
+
 
 export async function showEditPrescriptionForm(prescriptionId) {
     // Obtener la receta de Firestore usando el ID
