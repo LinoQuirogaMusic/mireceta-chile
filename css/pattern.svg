@@ -3,9 +3,9 @@
   <rect width="100" height="100" fill="#F5FAFC" />
 
   <!-- Cruces médicas -->
-  <rect x="15" y="15" width="8" height="8" fill="#B2EBF2" />
-  <rect x="17" y="12" width="4" height="14" fill="#B2EBF2" />
-  <rect x="12" y="17" width="14" height="4" fill="#B2EBF2" />
+  <rect x="12" y="12" width="16" height="16" fill="#B2EBF2" />
+  <rect x="17" y="9" width="6" height="22" fill="#B2EBF2" />
+  <rect x="9" y="17" width="22" height="6" fill="#B2EBF2" />
 
   <!-- Estetoscopios -->
   <circle cx="75" cy="25" r="8" fill="none" stroke="#80CBC4" stroke-width="2"/>
