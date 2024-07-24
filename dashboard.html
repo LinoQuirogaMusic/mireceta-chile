@@ -13,7 +13,7 @@
             <img id="user-photo" src="" alt="Foto de perfil" class="user-photo">
             <span id="user-name"></span>
         </div>
-        <h1>Dashboard</h1>
+        <input type="text" id="search-bar" placeholder="Buscar por paciente o medicamento" oninput="filterPrescriptions(this.value)">
         <div class="button-container">
             <button onclick="showCreatePrescriptionForm()">Crear receta</button>
             <button onclick="signOutUser()">Cerrar sesión</button>
@@ -64,7 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module">
-        import { signOutUser, showCreatePrescriptionForm, createPrescription, saveEditedPrescription, deletePrescription, showEditPrescriptionForm, searchPatients, closeModal, downloadPrescriptionQRCode } from './js/dashboard.js';
+        import { signOutUser, showCreatePrescriptionForm, createPrescription, saveEditedPrescription, deletePrescription, showEditPrescriptionForm, searchPatients, closeModal, downloadPrescriptionQRCode, filterPrescriptions } from './js/dashboard.js';
 
         window.signOutUser = signOutUser;
         window.createPrescription = createPrescription;
@@ -75,6 +75,8 @@
         window.searchPatients = searchPatients;
         window.closeModal = closeModal;
         window.downloadPrescriptionQRCode = downloadPrescriptionQRCode;
+        window.filterPrescriptions = filterPrescriptions;
+
     </script>
 </body>
 </html>

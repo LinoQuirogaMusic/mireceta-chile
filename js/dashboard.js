@@ -172,13 +172,18 @@ export async function searchPatients(queryText) {
     const suggestionsList = document.getElementById('suggestions-list');
     suggestionsList.innerHTML = ''; // Limpiar la lista de sugerencias
 
-    if (queryText.length < 3) { // No buscar hasta que el texto tenga al menos 3 caracteres
+    if (queryText.length < 2) { // No buscar hasta que el texto tenga al menos 3 caracteres
         return;
     }
 
     try {
-        const patientsCollection = collection(firestore, 'prescriptions');
-        const q = query(patientsCollection, where('patientName', '>=', queryText), where('patientName', '<=', queryText + '\uf8ff'));
+
+        const currentUserId = auth.currentUser.uid;
+        const patientsCollection = collection(firestore, 'patients');
+        const q = query(patientsCollection, 
+            where('doctorId', '==', currentUserId)
+            where('patientName', '>=', queryText), 
+            where('patientName', '<=', queryText + '\uf8ff'));
         const querySnapshot = await getDocs(q);
 
         if (querySnapshot.empty) {
@@ -207,5 +212,18 @@ export function signOutUser() {
         window.location.href = 'index.html';
     }).catch((error) => {
         console.error('Error during sign-out:', error);
+    });
+}
+
+export function filterPrescriptions(queryText) {
+    const prescriptionItems = document.querySelectorAll('.prescription-item');
+    prescriptionItems.forEach(item => {
+        const patientName = item.querySelector('p:nth-child(1)').textContent.toLowerCase();
+        const medicationName = item.querySelector('p:nth-child(2)').textContent.toLowerCase();
+        if (patientName.includes(queryText.toLowerCase()) || medicationName.includes(queryText.toLowerCase())) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
     });
 }

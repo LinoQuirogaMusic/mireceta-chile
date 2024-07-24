@@ -5,11 +5,8 @@ body {
     background-color: #f4f7f9;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    flex-direction: column;
     background-image: url('pattern.svg');
     background-repeat: repeat;
-
 }
 
 /* Header Styles */
@@ -34,6 +31,7 @@ header {
     padding: 10px;
     text-align: center;
 }
+
 header h1 {
     margin: 0;
 }
@@ -58,9 +56,10 @@ main {
     flex-direction: column;
     justify-content: center; /* Centra verticalmente */
     align-items: center; /* Centra horizontalmente */
-    height: 100vh; /* Asegúrate de que el contenedor tenga suficiente altura */
+    height: calc(100vh - 60px); /* Asegúrate de que el contenedor tenga suficiente altura */
     padding: 20px;
-    overflow: auto;
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    margin-top: 60px; /* Asegura que el contenido comience después del header */
 }
 
 /* Dashboard Content */
@@ -151,8 +150,6 @@ main {
     display: flex;
     align-items: center;
 }
-
-
 
 .prescription-item button:hover {
     background-color: #004d40; /* Darker teal */
@@ -255,12 +252,10 @@ button:hover {
     background-color: #004d40; /* Darker teal */
 }
 
-
 /* Hidden Elements */
 .hidden {
     display: none;
 }
-
 
 /* Suggestions List */
 .suggestions-list {
