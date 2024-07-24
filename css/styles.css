@@ -78,21 +78,20 @@ header button:first-child {
 /* Main Container */
 
 .login-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 60px);
+    padding-top: 60px; /* Espacio para el header */
     padding: 20px;
-    overflow-y: auto;
     background-color: #f4f7f9;
+    height: calc(100vh - 60px); /* Asegura que el contenido ocupe la altura restante */
+    box-sizing: border-box; /* Incluye el padding en la altura total */
 }
 
 
 .dashboard-main {
-    padding-top: 80px; /* Asegúrate de que esto sea igual o mayor que la altura del header */
+    padding-top: 60px; /* Espacio para el header */
     padding: 20px;
     background-color: #f4f7f9;
+    min-height: calc(100vh - 60px); /* Asegura que el contenido ocupe la altura restante */
+    box-sizing: border-box; /* Incluye el padding en la altura total */
 }
 
 /* Dashboard Content */
