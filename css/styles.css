@@ -76,7 +76,8 @@ header button:first-child {
 }
 
 /* Main Container */
-main {
+
+.login-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,8 +85,9 @@ main {
     height: calc(100vh - 60px);
     padding: 20px;
     overflow-y: auto;
-
+    background-color: #f4f7f9;
 }
+
 
 .dashboard-main {
     padding-top: 80px; /* Asegúrate de que esto sea igual o mayor que la altura del header */
