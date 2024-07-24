@@ -16,7 +16,7 @@ display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #00796b;
+    background-color: #f8f9fa;
     height: 60px; /* Define una altura fija para el header */
     box-sizing: border-box; /* Asegura que el padding esté incluido en la altura */
 }
@@ -69,9 +69,10 @@ main {
 }
 
 .dashboard-content h2 {
-    margin: 0;
+    margin: 10;
     font-size: 20px;
     flex-grow: 1;
+    color: white;
 }
 
 .dashboard-content button {
@@ -103,7 +104,7 @@ main {
 }
 
 #user-name {
-    font-size: 18px; /* Ajusta el tamaño del texto si es necesario */
+    font-size: 24px; /* Ajusta el tamaño del texto si es necesario */
 }
 
 /* Prescription List Styles */
