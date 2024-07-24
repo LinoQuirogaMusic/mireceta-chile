@@ -12,16 +12,18 @@ body {
 
 /* Header Styles */
 header {
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos a lo largo del header */
-    align-items: center; /* Alinea verticalmente los elementos en el centro */
+display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
     background-color: #f8f9fa;
+    height: 60px; /* Define una altura fija para el header */
+    box-sizing: border-box; /* Asegura que el padding esté incluido en la altura */
 }
 
 .login-header {
     background-color: #00796b; /* Verde */
-    color: #f8f9fa; /* Color del texto del encabezado */
+    color: white;
     padding: 10px;
     text-align: center;
     margin-bottom: 20px;
@@ -48,11 +50,13 @@ header button:hover {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    height: 100vh; /* Asegúrate de que el contenedor tenga suficiente altura */
+    gap: 20px;
+    align-items: center;
+    height: calc(100vh - 60px); /* Calcula la altura del contenido restante */
     padding: 20px;
     overflow: auto;
+    margin-top: 60px; /* Asegura que el contenido empiece debajo del header */
+}
 
 /* Dashboard Content */
 .dashboard-content {
