@@ -323,7 +323,7 @@ button:hover {
 
 #search-bar {
     padding: 10px;
-    width: 300px; /* Aumentar el ancho si es necesario */
+    width: 600px; /* Aumentar el ancho si es necesario */
     border-radius: 20px; /* Redondear esquinas */
     border: 1px solid #ccc;
     font-size: 16px;
