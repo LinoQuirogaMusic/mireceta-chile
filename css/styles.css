@@ -44,7 +44,7 @@ header h1 {
 }
 
 .logo {
-    width: 30%;
+    width: 45%;
     height: auto;
     object-fit: contain; /* Ajuste de imagen dentro del contenedor */
 }
@@ -52,6 +52,8 @@ header h1 {
 .logo-container {
     width: 100px; /* Ancho del contenedor del logo */
     height: 100px; /* Alto del contenedor del logo */
+    align-items: center; /* Centra verticalmente la imagen dentro del contenedor */
+    display: flex;
 }
 
 header button {
@@ -169,7 +171,10 @@ main {
     display: flex;
     align-items: center;
     margin-left: 10px;
+    gap: 15px;
 }
+
+
 
 .prescription-item button:hover {
     background-color: #004d40; /* Darker teal */
