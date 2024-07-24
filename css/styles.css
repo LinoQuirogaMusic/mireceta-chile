@@ -16,7 +16,7 @@ header {
     justify-content: space-between; /* Distribuye los elementos a lo largo del header */
     align-items: center; /* Alinea verticalmente los elementos en el centro */
     padding: 10px;
-    background-color: #f8f9fa;
+    background-color: #00796b;
 }
 
 .login-header {
@@ -51,6 +51,7 @@ main {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    justify-content: center;
     height: calc(100vh - 60px);
     padding: 20px;
     overflow: auto;
@@ -231,6 +232,7 @@ main {
     width: 300px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
+    align-self: center;
 }
 
 .login-container h2 {
