@@ -87,6 +87,10 @@ main {
 
 }
 
+.main-container {
+    padding-top: 20px; /* Asegura que haya suficiente espacio para el header */
+}
+
 /* Dashboard Content */
 .dashboard-content {
     display: flex;
@@ -95,7 +99,7 @@ main {
     width: 100%;
     max-width: 800px;
     padding: 10px 0;
-    margin-top: 20px; /* Añade un margen superior para evitar que quede oculto debajo del header */
+    margin-top: 80px; /* Añade un margen superior para evitar que quede oculto debajo del header */
 }
 
 .dashboard-content h2 {
