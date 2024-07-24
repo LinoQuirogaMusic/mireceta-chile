@@ -78,11 +78,13 @@ header button:first-child {
 /* Main Container */
 
 .login-main {
-    padding-top: 60px; /* Espacio para el header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
     padding: 20px;
-    background-color: #f4f7f9;
-    height: calc(100vh - 60px); /* Asegura que el contenido ocupe la altura restante */
-    box-sizing: border-box; /* Incluye el padding en la altura total */
+    overflow-y: auto;
 }
 
 
@@ -91,20 +93,19 @@ header button:first-child {
     padding: 20px;
     background-color: #f4f7f9;
     min-height: calc(100vh - 60px); /* Asegura que el contenido ocupe la altura restante */
-    box-sizing: border-box; /* Incluye el padding en la altura total */
-    justify-content:center;
+    box-sizing: border-box;
     display: flex;
-    align-items: flex-start;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: flex-start; /* Alinea el contenido en la parte superior */
 }
 
 /* Dashboard Content */
 .dashboard-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     max-width: 800px;
-    padding: 10px 0;
 }
 
 .dashboard-content h2 {
@@ -151,10 +152,9 @@ header button:first-child {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
-    max-width: 800px;
-    padding: 0 10px; /* Ajuste del padding */
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor principal */
+    max-width: 800px; /* Ajusta según el ancho deseado */
+    box-sizing: border-box; /* Asegura que el padding y border estén incluidos en el ancho */
 
 }
 
