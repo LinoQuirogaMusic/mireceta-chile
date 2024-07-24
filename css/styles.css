@@ -30,7 +30,6 @@ display: flex;
 }
 header h1 {
     margin: 0;
-    color: white;
 }
 
 header button {
@@ -51,12 +50,11 @@ header button:hover {
 main {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    height: calc(100vh - 60px); /* Calcula la altura del contenido restante */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh; /* Asegúrate de que el contenedor tenga suficiente altura */
     padding: 20px;
     overflow: auto;
-    margin-top: 60px; /* Asegura que el contenido empiece debajo del header */
 }
 
 /* Dashboard Content */
@@ -70,7 +68,7 @@ main {
 }
 
 .dashboard-content h2 {
-    margin: 10;
+    margin: 0;
     font-size: 20px;
     flex-grow: 1;
 }
@@ -104,7 +102,7 @@ main {
 }
 
 #user-name {
-    font-size: 24px; /* Ajusta el tamaño del texto si es necesario */
+    font-size: 18px; /* Ajusta el tamaño del texto si es necesario */
 }
 
 /* Prescription List Styles */
