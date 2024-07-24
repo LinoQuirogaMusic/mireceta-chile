@@ -163,7 +163,7 @@ main {
 
 /* Forms Styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: flex; /* Esto asegurará que el modal se muestre como un flex container */
     position: fixed;
     top: 0;
     left: 0;

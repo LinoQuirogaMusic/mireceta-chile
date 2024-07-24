@@ -181,7 +181,7 @@ export async function searchPatients(queryText) {
         const currentUserId = auth.currentUser.uid;
         const patientsCollection = collection(firestore, 'patients');
         const q = query(patientsCollection, 
-            where('doctorId', '==', currentUserId)
+            where('doctorId', '==', currentUserId),
             where('patientName', '>=', queryText), 
             where('patientName', '<=', queryText + '\uf8ff'));
         const querySnapshot = await getDocs(q);
@@ -205,16 +205,6 @@ export async function searchPatients(queryText) {
     }
 }
 
-export function signOutUser() {
-    auth.signOut().then(() => {
-        localStorage.removeItem('user_name');
-        localStorage.removeItem('id_token');
-        window.location.href = 'index.html';
-    }).catch((error) => {
-        console.error('Error during sign-out:', error);
-    });
-}
-
 export function filterPrescriptions(queryText) {
     const prescriptionItems = document.querySelectorAll('.prescription-item');
     prescriptionItems.forEach(item => {
@@ -225,5 +215,15 @@ export function filterPrescriptions(queryText) {
         } else {
             item.style.display = 'none';
         }
+    });
+}
+
+export function signOutUser() {
+    auth.signOut().then(() => {
+        localStorage.removeItem('user_name');
+        localStorage.removeItem('id_token');
+        window.location.href = 'index.html';
+    }).catch((error) => {
+        console.error('Error during sign-out:', error);
     });
 }
