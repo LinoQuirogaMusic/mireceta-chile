@@ -89,10 +89,10 @@ header button:first-child {
 
 
 .dashboard-main {
-    padding-top: 60px; /* Espacio para el header */
+    padding-top: 80px; /* Espacio para el header */
     padding: 20px;
     background-color: #f4f7f9;
-    min-height: calc(100vh - 60px); /* Asegura que el contenido ocupe la altura restante */
+    min-height: calc(100vh - 80px); /* Asegura que el contenido ocupe la altura restante */
     box-sizing: border-box;
     display: flex;
     justify-content: center; /* Centra horizontalmente el contenido */
