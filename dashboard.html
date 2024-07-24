@@ -13,13 +13,13 @@
             <img id="user-photo" src="" alt="Foto de perfil" class="user-photo">
             <span id="user-name"></span>
         </div>
-        <input type="text" id="search-bar" placeholder="Buscar por paciente o medicamento" oninput="filterPrescriptions(this.value)">
+        <input type="text" id="search-bar" placeholder="Buscar por paciente o medicamento" oninput="filterPrescriptions(this.value)", class=search-bar>
         <div class="button-container">
             <button onclick="showCreatePrescriptionForm()">Crear receta</button>
             <button onclick="signOutUser()">Cerrar sesión</button>
         </div>
     </header>
-    <main>
+    <main class="dashboard-main">
         <div class="dashboard-content">
             <div id="create-prescription-form" class="modal hidden">
                 <div class="modal-content">
