@@ -78,11 +78,10 @@ header button:first-child {
 /* Main Container */
 main {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    padding-top: 80px; /* Asegura que haya suficiente espacio para el header */
-    margin-top: 60px; /* Ajusta para evitar el solapamiento con el header */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center;     /* Centra verticalmente el contenido */
+    height: calc(100vh - 60px); /* Ocupa toda la altura restante, ajustando el tamaño del header */
+    padding: 0;
 
 }
 
@@ -141,7 +140,7 @@ main {
 
 /* Prescription List Styles */
 .prescription-list {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -275,9 +274,6 @@ main {
     width: 300px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
-    align-self: center;
-    /* Centra verticalmente */
-    margin-top: 20px; /* Ajusta este valor si es necesario */
 }
 
 .login-container h2 {
