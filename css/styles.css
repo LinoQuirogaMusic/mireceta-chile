@@ -44,7 +44,7 @@ header h1 {
 }
 
 .logo {
-    width: 80%;
+    width: 100%;
     height: auto;
     object-fit: contain; /* Ajuste de imagen dentro del contenedor */
 }
@@ -64,10 +64,15 @@ header button {
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
+    margin-left: 10px;
 }
 
 header button:hover {
     background-color: #003d33; /* Even darker teal */
+}
+
+header button:first-child {
+    margin-left: 0; /* El primer botón no tendrá margen izquierdo */
 }
 
 /* Main Container */
@@ -90,6 +95,7 @@ main {
     width: 100%;
     max-width: 800px;
     padding: 10px 0;
+    margin-top: 80px; /* Añade un margen superior para evitar que quede oculto debajo del header */
 }
 
 .dashboard-content h2 {
