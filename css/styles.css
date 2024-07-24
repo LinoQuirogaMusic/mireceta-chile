@@ -16,7 +16,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     height: 60px; /* Define una altura fija para el header */
     box-sizing: border-box; /* Asegura que el padding esté incluido en la altura */
     position: fixed; /* Fija el header */
@@ -29,11 +29,30 @@ header {
     background-color: #00796b; /* Verde */
     color: white;
     padding: 10px;
-    text-align: center;
+    justify-content: space-between; /* Alineación de elementos en extremos opuestos */
+    align-items: center; /* Alineación vertical */
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+.login-header h1 {
+    margin: 0;
+    font-size: 24px;
 }
 
 header h1 {
     margin: 0;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ajuste de imagen dentro del contenedor */
+}
+
+.logo-container {
+    width: 50px; /* Ancho del contenedor del logo */
+    height: 50px; /* Alto del contenedor del logo */
 }
 
 header button {
@@ -54,12 +73,13 @@ header button:hover {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    height: calc(100vh - 60px); /* Asegúrate de que el contenedor tenga suficiente altura */
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
     padding: 20px;
-    overflow-y: auto; /* Permite el desplazamiento vertical */
-    margin-top: 60px; /* Asegura que el contenido comience después del header */
+    padding-top: 80px; /* Añadir espacio adicional para el header */
+    overflow-y: auto;
+    margin-top: 60px;
 }
 
 /* Dashboard Content */
@@ -149,6 +169,7 @@ main {
 .button-container {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 .prescription-item button:hover {
@@ -287,4 +308,12 @@ button:hover {
 
 .suggestions-list li:hover {
     background-color: #f0f0f0;
+}
+
+#search-bar {
+    padding: 10px;
+    width: 300px; /* Aumentar el ancho si es necesario */
+    border-radius: 20px; /* Redondear esquinas */
+    border: 1px solid #ccc;
+    font-size: 16px;
 }

@@ -18,6 +18,13 @@ export function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.classList.add('hidden');
+
+        if (modalId === 'create-prescription-form') {
+            document.getElementById('patient-name').value = '';
+            document.getElementById('medication-name').value = '';
+            document.getElementById('dosis').value = '';
+            document.getElementById('suggestions-list').innerHTML = ''; // Limpiar sugerencias
+        }
     }
 }
 
@@ -25,6 +32,12 @@ export function showCreatePrescriptionForm() {
      console.log('Mostrando formulario de creación de receta');
     document.getElementById('create-prescription-form').classList.remove('hidden');
     document.getElementById('edit-prescription-form').classList.add('hidden');
+
+        // Limpiar los campos de entrada al abrir el formulario
+    document.getElementById('patient-name').value = '';
+    document.getElementById('medication-name').value = '';
+    document.getElementById('dosis').value = '';
+    document.getElementById('suggestions-list').innerHTML = ''; // Limpiar sugerencias
 }
 
 export async function createPrescription() {
@@ -158,6 +171,12 @@ export async function saveEditedPrescription() {
 }
 
 export async function deletePrescription(prescriptionId) {
+
+    const confirmation = confirm('¿Está seguro de que desea eliminar esta receta?');
+    if (!confirmation) {
+        return;
+    }
+
     const prescriptionRef = doc(firestore, 'prescriptions', prescriptionId);
 
     try {
