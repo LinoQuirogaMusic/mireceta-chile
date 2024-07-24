@@ -88,17 +88,16 @@ main {
 }
 
 .main-container {
-    padding-top: 20px; /* Asegura que haya suficiente espacio para el header */
+    padding-top: 200px; /* Asegura que haya suficiente espacio para el header */
 }
 
 /* Dashboard Content */
 .dashboard-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     max-width: 800px;
-    padding: 10px 0;
 }
 
 .dashboard-content h2 {
