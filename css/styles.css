@@ -5,6 +5,9 @@ body {
     background-color: #f4f7f9;
     margin: 0;
     padding: 0;
+    background-image: url('pattern.svg');
+    background-repeat: repeat;
+
 }
 
 /* Header Styles */
@@ -271,3 +274,5 @@ button:hover {
 .suggestions-list li:hover {
     background-color: #f0f0f0;
 }
+
+

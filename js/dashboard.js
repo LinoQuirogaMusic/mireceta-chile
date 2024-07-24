@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userPhotoImg = document.getElementById('user-photo');
 
     userNameSpan.textContent = localStorage.getItem('user_name');
-    userPhotoImg.src = localStorage.getItem('user_photo_url') || 'default-profile.png';
+    userPhotoImg.src = localStorage.getItem('user_photo_url') || 'images/default-profile.png';
 
     loadPrescriptions();
 });
