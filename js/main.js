@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await signInWithPopup(auth, provider);
                 const user = result.user;
                 const userId = user.uid;
+                const userProfileUrlPicture = user.photoURL;
 
                 // Obtener el documento del usuario desde Firestore
                 const userRef = doc(firestore, 'users', userId);
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         localStorage.setItem('user_name', user.displayName);
                         localStorage.setItem('user_id', user.uid);  // Almacena el user_id también
                         localStorage.setItem('id_token', user.accessToken);
+                        localStorage.setItem('user_photo_url', userProfileUrlPicture)
                         window.location.href = 'dashboard.html';
                     } else {
                         alert('No está autorizado para acceder a esta aplicación.');
