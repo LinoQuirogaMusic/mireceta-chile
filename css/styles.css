@@ -87,8 +87,8 @@ main {
 
 }
 
-.main-container {
-    padding-top: 200px; /* Asegura que haya suficiente espacio para el header */
+.dashboard-main {
+    margin-top: 60px;
 }
 
 /* Dashboard Content */
