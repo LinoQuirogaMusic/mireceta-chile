@@ -78,15 +78,13 @@ header button:first-child {
 /* Main Container */
 main {
     display: flex;
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center;     /* Centra verticalmente el contenido */
-    height: calc(100vh - 60px); /* Ocupa toda la altura restante, ajustando el tamaño del header */
-    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    padding: 20px;
+    overflow-y: auto;
 
-}
-
-.main-container {
-    padding-top: 80px; /* Asegura que haya suficiente espacio para el header */
 }
 
 /* Dashboard Content */
@@ -97,7 +95,7 @@ main {
     width: 100%;
     max-width: 800px;
     padding: 10px 0;
-    margin-top: 80px; /* Añade un margen superior para evitar que quede oculto debajo del header */
+    margin-top: 20px; /* Añade un margen superior para evitar que quede oculto debajo del header */
 }
 
 .dashboard-content h2 {
