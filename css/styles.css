@@ -95,7 +95,7 @@ main {
     width: 100%;
     max-width: 800px;
     padding: 10px 0;
-    margin-top: 100px; /* Añade un margen superior para evitar que quede oculto debajo del header */
+    margin-top: 200px; /* Añade un margen superior para evitar que quede oculto debajo del header */
 }
 
 .dashboard-content h2 {
@@ -326,5 +326,6 @@ button:hover {
     width: 600px; /* Aumentar el ancho si es necesario */
     border-radius: 20px; /* Redondear esquinas */
     border: 1px solid #ccc;
-    font-size: 16px;
+    font-size: 14px;
+    text-align: center;
 }
