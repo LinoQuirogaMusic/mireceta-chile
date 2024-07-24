@@ -1,18 +1,18 @@
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fondo azul claro -->
-  <rect width="100" height="100" fill="#E0F7FA" />
-  
-  <!-- Cruces médicas -->
-  <rect x="10" y="10" width="20" height="20" fill="#00ACC1" />
-  <rect x="15" y="5" width="10" height="30" fill="#00ACC1" />
-  <rect x="5" y="15" width="30" height="10" fill="#00ACC1" />
+  <!-- Fondo blanco -->
+  <rect width="100" height="100" fill="#FFFFFF" />
 
-  <!-- Estetoscopios -->
-  <circle cx="75" cy="25" r="10" fill="none" stroke="#00796B" stroke-width="3"/>
-  <path d="M 75 35 C 75 50, 60 50, 60 65 S 75 90, 75 75" fill="none" stroke="#00796B" stroke-width="3"/>
-  <circle cx="60" cy="65" r="5" fill="#00796B" />
+  <!-- Cruces médicas en gris claro -->
+  <rect x="15" y="15" width="10" height="10" fill="#F0F0F0" />
+  <rect x="18" y="12" width="4" height="16" fill="#F0F0F0" />
+  <rect x="12" y="18" width="16" height="4" fill="#F0F0F0" />
 
-  <!-- Píldoras -->
-  <ellipse cx="30" cy="75" rx="10" ry="5" fill="#FF8A65" />
-  <line x1="25" y1="75" x2="35" y2="75" stroke="#E57373" stroke-width="3"/>
+  <!-- Estetoscopios en gris claro -->
+  <circle cx="75" cy="25" r="8" fill="none" stroke="#F0F0F0" stroke-width="2"/>
+  <path d="M 75 33 C 75 45, 65 45, 65 60 S 75 85, 75 70" fill="none" stroke="#F0F0F0" stroke-width="2"/>
+  <circle cx="65" cy="60" r="3" fill="#F0F0F0" />
+
+  <!-- Píldoras en gris claro -->
+  <ellipse cx="30" cy="75" rx="6" ry="3" fill="#F0F0F0" />
+  <line x1="27" y1="75" x2="33" y2="75" stroke="#E0E0E0" stroke-width="2"/>
 </svg>
