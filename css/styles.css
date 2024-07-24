@@ -141,12 +141,15 @@ main {
 
 /* Prescription List Styles */
 .prescription-list {
-    margin-top: 60px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
     max-width: 800px;
+    padding: 0 10px; /* Ajuste del padding */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+
 }
 
 .prescription-item {
