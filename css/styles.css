@@ -44,14 +44,14 @@ header h1 {
 }
 
 .logo {
-    width: 45%;
+    width: 80%;
     height: auto;
     object-fit: contain; /* Ajuste de imagen dentro del contenedor */
 }
 
 .logo-container {
-    width: 100px; /* Ancho del contenedor del logo */
-    height: 100px; /* Alto del contenedor del logo */
+    width: 50px; /* Ancho del contenedor del logo */
+    height: 50px; /* Alto del contenedor del logo */
     align-items: center; /* Centra verticalmente la imagen dentro del contenedor */
     display: flex;
 }
@@ -80,7 +80,7 @@ main {
     padding: 20px;
     padding-top: 80px; /* Añadir espacio adicional para el header */
     overflow-y: auto;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 /* Dashboard Content */
