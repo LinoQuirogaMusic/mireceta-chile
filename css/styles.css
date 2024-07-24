@@ -30,6 +30,7 @@ display: flex;
 }
 header h1 {
     margin: 0;
+    color: white;
 }
 
 header button {
@@ -72,7 +73,6 @@ main {
     margin: 10;
     font-size: 20px;
     flex-grow: 1;
-    color: white;
 }
 
 .dashboard-content button {
