@@ -22,6 +22,7 @@ export function closeModal(modalId) {
 }
 
 export function showCreatePrescriptionForm() {
+     console.log('Mostrando formulario de creación de receta');
     document.getElementById('create-prescription-form').classList.remove('hidden');
     document.getElementById('edit-prescription-form').classList.add('hidden');
 }
