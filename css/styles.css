@@ -5,12 +5,16 @@ body {
     background-color: #f4f7f9;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a lo largo del header */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    padding: 10px;
+    background-color: #f8f9fa;
+}
 
 .login-header {
     background-color: #00796b; /* Verde */
@@ -18,14 +22,6 @@ body {
     padding: 10px;
     text-align: center;
     margin-bottom: 20px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos a lo largo del header */
-    align-items: center; /* Alinea verticalmente los elementos en el centro */
-    padding: 10px;
-    background-color: #f8f9fa;
 }
 
 header h1 {
@@ -48,11 +44,13 @@ header button:hover {
 
 /* Main Container */
 main {
-    flex-grow: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
+    height: calc(100vh - 60px);
     padding: 20px;
+    overflow: auto;
 }
 
 /* Dashboard Content */
