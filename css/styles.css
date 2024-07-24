@@ -88,7 +88,7 @@ main {
 }
 
 .dashboard-main {
-    padding-top: 60px; /* Asegúrate de que esto sea igual o mayor que la altura del header */
+    padding-top: 80px; /* Asegúrate de que esto sea igual o mayor que la altura del header */
     padding: 20px;
     background-color: #f4f7f9;
 }
