@@ -58,10 +58,9 @@ main {
     flex-direction: column;
     justify-content: center; /* Centra verticalmente */
     align-items: center; /* Centra horizontalmente */
-    height: calc(100vh - 60px); /* Resta la altura del header */
+    height: 100vh; /* Asegúrate de que el contenedor tenga suficiente altura */
     padding: 20px;
-    overflow: auto; /* Hace que el contenido sea scrolleable */
-    margin-top: 60px; /* Añade un margen superior para evitar que el contenido quede oculto detrás del header */
+    overflow: auto;
 }
 
 /* Dashboard Content */
