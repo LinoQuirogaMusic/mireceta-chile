@@ -3,10 +3,10 @@
   <rect width="100" height="100" fill="#F5FAFC" />
 
   <!-- Cruces médicas -->
-  <rect x="14" y="10" width="12" height="4" fill="#B2EBF2" />
-  <rect x="14" y="20" width="12" height="4" fill="#B2EBF2" />
-  <rect x="10" y="14" width="4" height="12" fill="#B2EBF2" />
-  <rect x="20" y="14" width="4" height="12" fill="#B2EBF2" />
+  <rect x="12" y="12" width="8" height="24" fill="#B2EBF2" />
+  <rect x="20" y="20" width="24" height="8" fill="#B2EBF2" />
+  <rect x="36" y="12" width="8" height="24" fill="#B2EBF2" />
+  <rect x="20" y="4" width="8" height="24" fill="#B2EBF2" />
 
   <!-- Estetoscopios -->
   <circle cx="75" cy="25" r="8" fill="none" stroke="#80CBC4" stroke-width="2"/>
